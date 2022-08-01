@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Header from './My Components/Header';
+import Footer from './My Components/Footer';
+import Notes from './My Components/Notes';
 
 function App() {
+
+  const onDelete =(todo) => {
+
+    console.log("hello",todo);
+  }
+
+  let notes = [{
+
+    slno: 1,
+    title: " Note 1 ",
+    desc: "this us description 1"
+
+  },
+
+  {
+
+    slno: 2,
+    title: " Note 2 ",
+    desc: "this us description 2"
+
+  },
+
+  {
+
+    slno: 3,
+    title: " Note 3 ",
+    desc: "this us description 3"
+
+  },
+
+
+
+]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+    <Header title="Notes" login={true} />
+
+    <Notes notes={notes} onDelete={onDelete}/>
+    <Footer/>
+   
+    
+    </>
+    
+
+
+
   );
 }
 
